@@ -23,7 +23,7 @@ def search_in_documents(documents, term):
 
 def main():
     # Directorio donde están tus archivos de texto
-    directory = r'D:\U\7. Septimo Semestre\Rec. Info\ir24a\week01\data'
+    directory = r'D:\U\7. Septimo \Rec. Info\ir24a\week01\data'
     
     # Cargar documentos
     documents = load_documents(directory)
