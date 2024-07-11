@@ -3,6 +3,7 @@ import time
 from random import randrange
 import numpy as np
 import pandas as pd
+from gensim import api
 
 
 def f(x):
@@ -33,5 +34,8 @@ if __name__ == '__main__':
         corpus = df['text']
 
         pool = Pool(processes=4)
-        pool.map(print10, corpus[:4])
-        
+        embeddings = pool.map(generate_word2vec_embeddings, corpus[:4])
+        print(embeddings)
+        df['embeddings'] = embeddings
+
+        df.to_csv('D:\U\7. Septimo\RI\ir24a\week11\data\podcastdata_embeddings.csv', index=False)
